@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    
+<title>home</title>
+
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/menu.css">
+<link rel="stylesheet" type="text/css" href="styles/framework.css">
+<link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="styles/my.css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/plugins.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/angular.min.js"></script>
+<script src="cordova.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+<div id="page-transitions" ng-controller="homeCtrl">
+    
+<div class="page-preloader page-preloader-dark">
+    <img class="page-preload" src="images/preload2.gif">
+</div>
+   
+<div class="header header-dark">
+    <a href="#" class="header-icon-1 show-myshare"><i class="fa fa-share-alt"></i></a>
+    <a href="index-home.html" class="header-logo"></a>
+    <a href="#" class="header-icon-4 show-right-sidebar"><i class="fa fa-navicon"></i></a>
+</div>
+
+<div id="page-content" class="page-content">
+    <div id="page-content-scroll">
+
+		<div class="content">     
+            <div class="home-tabs">
+                <a class="activate-tab-1" href="index-next.html">مباريات الغد</a>
+                <a class="activate-tab-2 active-home-tab" href="index-home.html">مباريات اليوم</a>
+                <a class="activate-tab-3" href="index-back.html">مباريات أمس</a>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="content" >
+		
+            <div class="thumb-layout thumb-layout1" ng-repeat="x in names" >
+                <a class="gomatch" id="{{ x.id }}" timeh="{{ x.hour }}" timem="{{x.minute}}" ng-click="GoMatch(x.id, x.month, x.day, x.hour, x.minute, x.url, x.note, x.linktype )">
+					<h3>{{ x.team1 }} - {{ x.team2 }}</h3>
+					<h1>{{ x.note }}</h1>
+                    <img class="rightimg" src="{{ x.logo1 }}" />
+                    <img class="leftimg" src="{{ x.logo2 }}" />
+					<span>{{ x.champ }}</span>
+					
+				</a>    
+				<div class="decoration"></div>				
+            </div>
+			
+        </div>		
+    </div>
+</div>
+
+<div class="sidebar-right">
+    <div class="sidebar-scroll-right sidebar-dark-clean">         
+        <div class="sidebar-image sfont">
+            <h3>يلا جوول مباشر</h3>
+            <em>التطبيق الأول لبث المباريات</em>
+            <div class="sidebar-overlay"></div>
+            <img src="images/pictures/3.jpg" alt="img" class="responsive-image">
+        </div>       
+        <div class="sidebar-divider no-bottom no-top"></div>
+        <p class="sidebar-divider" align="right" style="display:none;">Navigation</p>
+        <div class="sidebar-menu" style="direction:rtl">
+
+            <a class="menu-item" href="index-home.html">
+                <i class="fa fa-futbol-o bg-red-dark"></i>
+                <em class="sfont">مباريات اليوم</em>
+                <i class="fa fa-circle"></i>
+            </a>                                 
+            <a class="menu-item" href="index-next.html">
+                <i class="fa fa-futbol-o bg-green-dark"></i>
+                <em class="sfont">مباريات غدا</em>
+                <i class="fa fa-circle"></i>
+            </a>                 
+            <a class="menu-item" href="index-back.html">
+                <i class="fa fa-futbol-o bg-blue-dark"></i>
+                <em class="sfont">مباريات أمس</em>
+                <i class="fa fa-circle"></i>
+            </a>                             
+            <a class="menu-item close-sidebar" href="#">
+                <i class="fa fa-times bg-red-dark"></i>
+                <em class="sfont">إغلاق</em>
+                <i class="fa fa-circle"></i>
+            </a>
+        </div>
+        <p class="sidebar-footer sfont" align="center">برمجة وتصميم سمارتس الوادي</p>
+    </div>
+</div>
+
+
+<div class="share-bottom share-dark">
+    <h3>شارك التطبيق الآن</h3>
+    <div class="share-socials-bottom">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.themeforest.net/">
+            <i class="fa fa-facebook facebook-color"></i>
+            فيسبوك
+        </a>
+        <a href="https://twitter.com/home?status=Check%20out%20ThemeForest%20http://www.themeforest.net">
+            <i class="fa fa-twitter twitter-color"></i>
+            تويتر
+        </a>
+        <a href="https://plus.google.com/share?url=http://www.themeforest.net">
+            <i class="fa fa-google-plus google-color"></i>
+            +جوجل
+        </a>
+        <a href="https://pinterest.com/pin/create/button/?url=http://www.themeforest.net/&media=https://0.s3.envato.com/files/63790821/profile-image.jpg&description=Themes%20and%20Templates">
+            <i class="fa fa-share-alt pinterest-color"></i>
+            المزيد
+        </a>
+        <a href="sms:">
+            <i class="fa fa-comment-o sms-color"></i>
+            واتس أب
+        </a>
+        <a href="mailto:?&subject=Check this page out!&body=http://www.themeforest.net">
+            <i class="fa fa-envelope-o mail-color"></i>
+            البريد
+        </a>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="background"></div>
+</div>
+</body><a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>أنتقل للأعلي</a>
+<script type="text/javascript" src="scripts/custom2.js"></script>
